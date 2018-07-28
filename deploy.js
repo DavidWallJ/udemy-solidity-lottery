@@ -19,7 +19,7 @@ const deploy = async () => {
   // the interface is the ABI
   // the ABI allows us to interact with the etherium network using JS
   const result = await new web3.eth.Contract(JSON.parse(interface))
-    .deploy({ data: '0x' + bytecode, arguments: ["This is the initial message"] })
+    .deploy({ data: '0x' + bytecode })
     .send({ gas: "1000000", from: accounts[0] });
 
   console.log("contract deployed to: ", result.options.address);
